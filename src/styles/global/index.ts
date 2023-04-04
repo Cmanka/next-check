@@ -1,4 +1,4 @@
-import { createGlobalStyle } from "styled-components";
+import { createGlobalStyle } from 'styled-components';
 
 export const GlobalStyles = createGlobalStyle`
   * {
@@ -10,8 +10,8 @@ export const GlobalStyles = createGlobalStyle`
   body {
     margin: 0;
     padding: 0;
-    background: #303135;
-    color: #fff;
+    background-color:${({ theme }) => theme.colors.bodyBackgroundColor};
+    color: ${({ theme }) => theme.colors.font};
     font-family: "Montserrat", sans-serif;
   }
 

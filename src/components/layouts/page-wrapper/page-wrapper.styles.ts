@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 export const Wrapper = styled.main`
   display: flex;
-  height: calc(100vh - 75px);
+  height: ${({ theme: { layouts } }) => `calc(100vh - ${layouts.header.height})`};
 `;
 
 export const Container = styled.div`
@@ -11,11 +11,11 @@ export const Container = styled.div`
 
   &::-webkit-scrollbar {
     width: 5px;
-    background-color: #202125;
+    background-color: ${({ theme: { colors } }) => colors.primary};
   }
 
   &::-webkit-scrollbar-thumb {
     width: 15px;
-    background-color: #8798f8;
+    background-color: ${({ theme: { colors } }) => colors.secondary};
   }
 `;

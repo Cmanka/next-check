@@ -1,17 +1,17 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 export const Wrapper = styled.header`
-  background-color: #202125;
-	height: 75px;
+  background-color: ${({ theme: { colors } }) => colors.primary};
+  height: ${({ theme: { layouts } }) => layouts.header.height};
   display: flex;
-	align-items: center;
-	justify-content: space-between;
-`
+  align-items: center;
+  justify-content: space-between;
+`;
 
 export const CoinWrapper = styled.div`
-  height: 75px;
-  width: 75px;
-  background-color: #8798f9;
+  height: ${({ theme: { layouts } }) => layouts.header.height};
+  width: ${({ theme: { layouts } }) => layouts.header.height};
+  background-color: ${({ theme: { colors } }) => colors.secondary};
   display: flex;
   justify-content: center;
   align-items: center;
@@ -20,28 +20,28 @@ export const CoinWrapper = styled.div`
     width: 50%;
     height: 50%;
   }
-`
+`;
 
 export const RightSection = styled.div`
-	display: flex;
-`
+  display: flex;
+`;
 
 export const RightItem = styled.div`
-  height: 75px;
-  width: 75px;
+  height: ${({ theme: { layouts } }) => layouts.header.height};
+  width: ${({ theme: { layouts } }) => layouts.header.height};
   display: flex;
   justify-content: center;
   align-items: center;
-	cursor: pointer;
-	transition: opacity 0.25s ease-in-out;
-	border-left: 2px solid white;
-	
-	&:hover{
-		opacity: 0.7;
-	}
-	
+  cursor: pointer;
+  transition: opacity 0.25s ease-in-out;
+  border-left: 2px solid ${({ theme: { colors } }) => colors.font};
+
+  &:hover {
+    opacity: 0.7;
+  }
+
   & img {
     width: 50%;
     height: 50%;
   }
-`
+`;

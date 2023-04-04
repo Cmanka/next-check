@@ -1,13 +1,16 @@
 import Image from 'next/image';
 import { memo } from 'react';
-
-import addIcon from '@/assets/plus.svg';
+import { useTheme } from 'styled-components';
 
 import { tableHeader } from './assets-table.data';
 import * as Styled from './assets-table.styles';
 import { type AssetsTableProps } from './assets-table.types';
 
 const AssetsTableComponent = ({ assets }: AssetsTableProps) => {
+  const {
+    icons: { plus },
+  } = useTheme();
+
   if (!assets?.length) {
     return null;
   }
@@ -28,7 +31,7 @@ const AssetsTableComponent = ({ assets }: AssetsTableProps) => {
             <Styled.Td>{marketCap}</Styled.Td>
             <Styled.Td>{change24h}</Styled.Td>
             <Styled.Td>
-              <Image src={addIcon} alt="plus" width={30} height={30} />
+              <Image src={plus} alt="plus" width={30} height={30} />
             </Styled.Td>
           </Styled.Tr>
         ))}

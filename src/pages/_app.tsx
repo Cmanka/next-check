@@ -1,12 +1,18 @@
-import "./_app.css";
+import './_app.css';
 
-import type { AppProps } from 'next/app'
+import type { AppProps } from 'next/app';
+import { ThemeProvider } from 'styled-components';
 
-import { GlobalStyles } from "@/styles";
+import { GlobalStyles } from '@/styles/global';
+import { useToggleTheme } from '@/utils/hooks/use-toggle-theme.hook';
 
 export default function App({ Component, pageProps }: AppProps) {
-	return <>
-		<GlobalStyles/>
-		<Component {...pageProps} />
-	</>
+  const { theme, toggleTheme } = useToggleTheme();
+
+  return (
+    <ThemeProvider theme={{ toggleTheme, ...theme }}>
+      <GlobalStyles />
+      <Component {...pageProps} />
+    </ThemeProvider>
+  );
 }

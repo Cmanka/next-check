@@ -1,6 +1,6 @@
 import Head from 'next/head';
 
-import coinSvg from '@/assets/coin.svg';
+import coinSvg from '@/assets/lights/coin.svg';
 
 import { type SeoProps } from './seo.types';
 
