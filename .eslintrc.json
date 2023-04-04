@@ -4,8 +4,11 @@
     "es2021": true
   },
   "extends": [
+    "eslint:recommended",
     "plugin:react/recommended",
     "plugin:@typescript-eslint/recommended",
+    "next",
+    "next/core-web-vitals",
     "standard-with-typescript",
     "prettier",
     "plugin:react-hooks/recommended"
@@ -32,8 +35,8 @@
     "react/display-name": "off",
     "@typescript-eslint/ban-types": "off",
     "@typescript-eslint/no-empty-interface": "off",
-    "react/prop-types": "off",
     "@typescript-eslint/explicit-function-return-type": "off",
-    "react/react-in-jsx-scope": "off"
+    "react/react-in-jsx-scope": "off",
+    "@typescript-eslint/strict-boolean-expressions": "off"
   }
 }

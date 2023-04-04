@@ -1,5 +1,5 @@
-import NextLink from "next/link";
-import styled from 'styled-components'
+import NextLink from 'next/link';
+import styled from 'styled-components';
 
 export const Wrapper = styled.aside`
   display: flex;
@@ -10,9 +10,14 @@ export const Wrapper = styled.aside`
   padding-top: 20px;
   gap: 15px;
   align-items: center;
-`
+`;
 
-export const Link = styled(NextLink)`
-  font-size: 20px;
+interface ActiveProps {
+  isActive: boolean;
+}
+
+export const Link = styled(NextLink)<ActiveProps>`
+  font-size: 16px;
   text-align: center;
-`
+  opacity: ${({ isActive }) => (isActive ? 0.7 : 1)};
+`;
