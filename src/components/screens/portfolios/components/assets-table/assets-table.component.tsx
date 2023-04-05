@@ -1,6 +1,9 @@
-import Image from 'next/image';
+import { useTranslation } from 'next-i18next';
 import { memo } from 'react';
 import { useTheme } from 'styled-components';
+
+import { Icon } from '@/components/ui/icon';
+import PlusIcon from '@/shared/assets/plus.svg';
 
 import { tableHeader } from './assets-table.data';
 import * as Styled from './assets-table.styles';
@@ -8,8 +11,9 @@ import { type AssetsTableProps } from './assets-table.types';
 
 const AssetsTableComponent = ({ assets }: AssetsTableProps) => {
   const {
-    icons: { plus },
+    svg: { fill },
   } = useTheme();
+  const { t } = useTranslation('portfolios');
 
   if (!assets?.length) {
     return null;
@@ -20,7 +24,7 @@ const AssetsTableComponent = ({ assets }: AssetsTableProps) => {
       <Styled.Header>
         <Styled.Tr>
           {tableHeader.map((label) => (
-            <Styled.Th key={label}>{label}</Styled.Th>
+            <Styled.Th key={label}>{t(`table.${label}`)}</Styled.Th>
           ))}
         </Styled.Tr>
       </Styled.Header>
@@ -31,7 +35,7 @@ const AssetsTableComponent = ({ assets }: AssetsTableProps) => {
             <Styled.Td>{marketCap}</Styled.Td>
             <Styled.Td>{change24h}</Styled.Td>
             <Styled.Td>
-              <Image src={plus} alt="plus" width={30} height={30} />
+              <Icon SvgIcon={PlusIcon} fill={fill} width={30} height={30} />
             </Styled.Td>
           </Styled.Tr>
         ))}

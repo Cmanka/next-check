@@ -1,1 +1,1 @@
-export const tableHeader = ['Symbol', 'Market Cap', '24H Change', 'Add'];
+export const tableHeader = ['symbol', 'market', 'change', 'add'];

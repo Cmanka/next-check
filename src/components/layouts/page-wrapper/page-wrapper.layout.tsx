@@ -1,4 +1,4 @@
-import { Seo } from '@/components/seo';
+import { Seo } from '@/components/layouts/seo';
 
 import { Header } from '../header';
 import { Sidebar } from '../sidebar';

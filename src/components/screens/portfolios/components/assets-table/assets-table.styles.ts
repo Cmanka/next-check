@@ -20,6 +20,7 @@ export const Row = css`
 export const Th = styled.th`
   ${Row};
   padding: 10px 0;
+  font-size: 14px;
   background-color: ${({ theme: { colors } }) => colors.primary};
   border: 2px solid ${({ theme: { colors } }) => colors.secondary};
 `;

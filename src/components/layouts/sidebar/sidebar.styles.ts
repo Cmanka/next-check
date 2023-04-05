@@ -13,11 +13,17 @@ export const Wrapper = styled.aside`
 `;
 
 interface ActiveProps {
-  isActive: boolean;
+  active: boolean;
 }
 
 export const Link = styled(NextLink)<ActiveProps>`
-  font-size: 16px;
-  text-align: center;
-  opacity: ${({ isActive }) => (isActive ? 0.7 : 1)};
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  opacity: ${({ active }) => (active ? 0.7 : 1)};
+`;
+
+export const Label = styled.span`
+  font-size: 12px;
 `;

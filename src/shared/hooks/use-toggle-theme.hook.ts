@@ -1,8 +1,8 @@
 import { useEffect, useMemo, useState } from 'react';
 
+import { AppTheme } from '@/shared/constants/app-theme.constant';
+import { StorageKeys } from '@/shared/constants/storage-keys.constant';
 import { darkTheme, lightTheme, theme } from '@/styles/theme';
-import { AppTheme } from '@/utils/constants/app-theme.constant';
-import { StorageKeys } from '@/utils/constants/storage-keys.constant';
 
 export const useToggleTheme = () => {
   const [currentTheme, setCurrentTheme] = useState(AppTheme.Dark);

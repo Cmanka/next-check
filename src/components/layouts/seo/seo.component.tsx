@@ -1,7 +1,5 @@
 import Head from 'next/head';
 
-import coinSvg from '@/assets/lights/coin.svg';
-
 import { type SeoProps } from './seo.types';
 
 const SeoComponent = ({ children, title, description }: SeoProps) => {
@@ -12,7 +10,6 @@ const SeoComponent = ({ children, title, description }: SeoProps) => {
         <meta name="description" content="Checkout our cool page" key="desc" />
         <meta property="og:title" content={title} />
         {Boolean(description) && <meta property="og:description" content={description} />}
-        <meta property="og:image" content={coinSvg} />
       </Head>
       {children}
     </>

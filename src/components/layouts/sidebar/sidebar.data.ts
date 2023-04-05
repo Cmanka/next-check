@@ -1,19 +1,22 @@
-import { Routes } from '@/utils/constants/routes.constant';
+import AboutIcon from '@/shared/assets/about.svg';
+import HomeIcon from '@/shared/assets/home.svg';
+import PortfolioIcon from '@/shared/assets/portfolio.svg';
+import { Routes } from '@/shared/constants/routes.constant';
 
 export const sidebarData = [
   {
-    label: 'Home',
+    label: 'home',
     href: Routes.Home,
-    icon: 'home',
+    Svg: HomeIcon,
   },
   {
-    label: 'Portfolios',
+    label: 'portfolios',
     href: Routes.Portfolios,
-    icon: 'portfolio',
+    Svg: PortfolioIcon,
   },
   {
-    label: 'About',
+    label: 'about',
     href: Routes.About,
-    icon: 'about',
+    Svg: AboutIcon,
   },
 ];

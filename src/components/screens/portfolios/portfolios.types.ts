@@ -1,5 +1,7 @@
-import { type Portfolio } from '@/interfaces/portfolio.interface';
+import { type SSRConfig } from 'next-i18next';
 
-export interface PortfoliosServerSideProps {
+import { type Portfolio } from '@/shared/interfaces/portfolio.interface';
+
+export interface PortfoliosServerSideProps extends SSRConfig {
   portfolios: Portfolio[];
 }

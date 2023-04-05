@@ -18,7 +18,7 @@
       "@/*": ["./src/*"]
     },
     "typeRoots": [
-      "./src/declarations/*.d.ts",
+      "./src/@types",
       "./node_modules/@types"
     ]
   },

@@ -1,5 +1,5 @@
-import { api } from '@/configs/api.config';
-import { type Portfolio } from '@/interfaces/portfolio.interface';
+import { api } from '@/shared/configs/api.config';
+import { type Portfolio } from '@/shared/interfaces/portfolio.interface';
 
 class PortfolioServiceClass {
   async getPortfolios() {

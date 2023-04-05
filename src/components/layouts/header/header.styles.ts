@@ -10,13 +10,13 @@ export const Wrapper = styled.header`
 
 export const CoinWrapper = styled.div`
   height: ${({ theme: { layouts } }) => layouts.header.height};
-  width: ${({ theme: { layouts } }) => layouts.header.height};
+  width: ${({ theme: { layouts } }) => layouts.sidebar.width};
   background-color: ${({ theme: { colors } }) => colors.secondary};
   display: flex;
   justify-content: center;
   align-items: center;
 
-  & img {
+  & svg {
     width: 50%;
     height: 50%;
   }
@@ -40,7 +40,7 @@ export const RightItem = styled.div`
     opacity: 0.7;
   }
 
-  & img {
+  & svg {
     width: 50%;
     height: 50%;
   }

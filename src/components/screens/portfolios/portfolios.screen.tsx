@@ -1,3 +1,4 @@
+import { useTranslation } from 'next-i18next';
 import { memo } from 'react';
 
 import { PageWrapper } from '@/components/layouts/page-wrapper';
@@ -7,10 +8,12 @@ import * as Styled from './portfolios.styles';
 import { type PortfoliosServerSideProps } from './portfolios.types';
 
 const PortfoliosScreen = ({ portfolios }: PortfoliosServerSideProps) => {
+  const { t } = useTranslation('portfolios');
+
   return (
-    <PageWrapper title="Portfolio">
+    <PageWrapper title={t('seo.title')}>
       <Styled.InnerWrapper>
-        <Styled.Title>Portfolio</Styled.Title>
+        <Styled.Title>{t('title')}</Styled.Title>
         <Styled.Cards>
           {portfolios.map((portfolio) => (
             <Card key={portfolio.id} {...portfolio} />

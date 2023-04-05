@@ -1,14 +1,17 @@
+import { useTranslation } from 'next-i18next';
+
 import { PageWrapper } from '@/components/layouts/page-wrapper';
-import { Routes } from '@/utils/constants/routes.constant';
+import { Routes } from '@/shared/constants/routes.constant';
 
 import * as Styled from './not-found.styles';
 
 const NotFoundScreen = () => {
+  const { t } = useTranslation('common');
   return (
-    <PageWrapper title="Not Found - 404">
+    <PageWrapper title={t('notfound.seo.title')}>
       <Styled.InnerWrapper>
-        <Styled.Title>Page not found</Styled.Title>
-        <Styled.HomeButton label="Go back home" href={Routes.Home} />
+        <Styled.Title>{t('notfound.title')}</Styled.Title>
+        <Styled.HomeButton label={t('notfound.button.text')} href={Routes.Home} />
       </Styled.InnerWrapper>
     </PageWrapper>
   );

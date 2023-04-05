@@ -7,7 +7,7 @@ const theme = {
       height: '75px',
     },
     sidebar: {
-      width: '75px',
+      width: '90px',
     },
   },
   ...darkTheme,
