@@ -5,12 +5,12 @@ import * as Styled from './list.styles';
 import { type ListProps } from './list.types';
 
 const ListComponent = ({ news }: ListProps) => {
-  const { t } = useTranslation();
+  const { t } = useTranslation('common');
 
   if (!news?.length) {
     return (
       <Styled.Wrapper>
-        <Styled.EmptyTitle>{t('List is empty')}</Styled.EmptyTitle>
+        <Styled.EmptyTitle>{t('empty.list')}</Styled.EmptyTitle>
       </Styled.Wrapper>
     );
   }

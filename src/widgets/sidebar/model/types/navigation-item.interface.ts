@@ -1,7 +1,9 @@
+import { type SVGProps, type VFC } from 'react';
+
 import { type Routes } from '@/shared/constants/routes.constant';
 
 export interface NavigationItem {
   label: string;
   href: Routes;
-  Svg: SVGElement;
+  Svg: VFC<SVGProps<SVGSVGElement>>;
 }

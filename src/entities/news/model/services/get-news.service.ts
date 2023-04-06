@@ -9,7 +9,7 @@ const parseResponse = (news: NewsFromApi[]): News[] =>
 
 export const getNews = async (options?: GetNewsVariables): Promise<News[]> => {
   try {
-    const { data } = await newsApi.get<GetNewsResponse[]>('/everything', {
+    const { data } = await newsApi.get<GetNewsResponse>('/everything', {
       params: { q: 'bitcoin', language: options?.language ?? AppLanguage.English },
     });
 

@@ -1,13 +1,15 @@
+import { type GetStaticProps } from 'next';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 
 import { About } from '@/screens/about';
+import { AppLanguage } from '@/shared/constants/app-language.constant';
 
 const AboutPage = () => {
   return <About />;
 };
 
-export const getStaticProps = async ({ locale }) => {
-  const translations = await serverSideTranslations(locale, ['common', 'about']);
+export const getStaticProps: GetStaticProps = async ({ locale }) => {
+  const translations = await serverSideTranslations(locale ?? AppLanguage.English, ['common', 'about']);
 
   return { props: { ...translations }, revalidate: 10 };
 };

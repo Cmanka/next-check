@@ -3,11 +3,11 @@ import { memo } from 'react';
 import * as Styled from './input.styles';
 import { type InputProps } from './input.types';
 
-const InputComponent = ({ label, className, ...inputProps }: InputProps) => {
+const InputComponent = ({ label, className }: InputProps) => {
   return (
     <Styled.Wrapper className={className}>
       {Boolean(label) && <span>{label}</span>}
-      <Styled.Input type="text" {...inputProps} />
+      <Styled.Input type="text" />
     </Styled.Wrapper>
   );
 };

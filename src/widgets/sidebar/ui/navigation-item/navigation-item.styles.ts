@@ -2,7 +2,7 @@ import NextLink from 'next/link';
 import styled from 'styled-components';
 
 interface ActiveProps {
-  active: boolean;
+  active: string;
 }
 
 export const Link = styled(NextLink)<ActiveProps>`
