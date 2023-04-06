@@ -16,13 +16,14 @@ export const getFullContent = async (url: string) => {
   return article?.textContent ?? '';
 };
 
-export const getNewsById = async ({ language, id }: GetNewsByIdVariables): Promise<News> => {
+export const getNewsById = async ({ language, id }: GetNewsByIdVariables): Promise<News | undefined> => {
   try {
     const newsResponse = await getNews({ language });
+
     const news = newsResponse.find((data) => data.id === id);
 
     if (!news) {
-      throw new Error('Not found');
+      return undefined;
     }
 
     const fullContent = await getFullContent(news.url);

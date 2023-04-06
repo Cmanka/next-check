@@ -1,5 +1,3 @@
-import './_app.css';
-
 import type { AppProps } from 'next/app';
 import { appWithTranslation } from 'next-i18next';
 import { ThemeProvider } from 'styled-components';

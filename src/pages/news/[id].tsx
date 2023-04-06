@@ -24,6 +24,10 @@ export const getStaticProps: GetStaticProps<NewsStaticProps, NewsStaticPath> = a
   const translations = await serverSideTranslations(language, ['common', 'news']);
   const news = await getNewsById({ id: params?.id ?? '', language });
 
+  if (!news) {
+    return { notFound: true };
+  }
+
   return { props: { ...translations, news }, revalidate: 300 };
 };
 
