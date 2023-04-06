@@ -2,14 +2,16 @@ import Head from 'next/head';
 
 import { type SeoProps } from './meta.types';
 
-const MetaComponent = ({ children, title, description }: SeoProps) => {
+const MetaComponent = ({ children, title, description, keyWords }: SeoProps) => {
   return (
     <>
       <Head>
         <title>{title}</title>
-        <meta name="description" content="Checkout our cool page" key="desc" />
+        <meta charSet="utf-8" />
+        {description && <meta name="description" content={description} />}
+        {keyWords && <meta name="keywords" content={keyWords} />}
         <meta property="og:title" content={title} />
-        {Boolean(description) && <meta property="og:description" content={description} />}
+        {description && <meta property="og:description" content={description} />}
       </Head>
       {children}
     </>
