@@ -1,8 +1,8 @@
-import { Head, Html, Main, NextScript } from 'next/document';
+import { type DocumentProps, Head, Html, Main, NextScript } from 'next/document';
 
-export default function Document() {
+const Document = ({ __NEXT_DATA__: { locale } }: DocumentProps) => {
   return (
-    <Html>
+    <Html lang={locale}>
       <Head />
       <body>
         <Main />
@@ -10,4 +10,6 @@ export default function Document() {
       </body>
     </Html>
   );
-}
+};
+
+export default Document;

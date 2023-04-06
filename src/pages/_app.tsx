@@ -4,8 +4,8 @@ import type { AppProps } from 'next/app';
 import { appWithTranslation } from 'next-i18next';
 import { ThemeProvider } from 'styled-components';
 
-import { useToggleTheme } from '@/shared/hooks/use-toggle-theme.hook';
-import { GlobalStyles } from '@/styles/global';
+import { useToggleTheme } from '@/shared/lib/hooks/use-toggle-theme.hook';
+import { GlobalStyles } from '@/shared/styles/global';
 
 const App = ({ Component, pageProps }: AppProps) => {
   const { theme, toggleTheme } = useToggleTheme();

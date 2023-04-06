@@ -1,6 +1,6 @@
 import 'styled-components';
 
-import { type theme } from '@/styles/theme';
+import { type theme } from '@/shared/styles/theme';
 
 type CustomTheme = typeof theme;
 

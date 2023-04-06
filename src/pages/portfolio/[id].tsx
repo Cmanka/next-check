@@ -1,7 +1,7 @@
-import { PortfolioScreen } from '@/components/screens/portfolio';
+import { Portfolio } from '@/screens/portfolio';
 
-const Portfolio = () => {
-  return <PortfolioScreen />;
+const PortfolioPage = () => {
+  return <Portfolio />;
 };
 
-export default Portfolio;
+export default PortfolioPage;

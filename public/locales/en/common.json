@@ -4,5 +4,6 @@
   "sidebar.about": "About",
   "notfound.seo.title": "Not Found - 404",
   "notfound.title": "Page not found",
-  "notfound.button.text": "Go back home"
+  "notfound.button.text": "Go back home",
+  "navigation.text": "Go to details"
 }

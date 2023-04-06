@@ -1,9 +1,9 @@
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 
-import { AboutScreen } from '@/components/screens/about';
+import { About } from '@/screens/about';
 
-const About = () => {
-  return <AboutScreen />;
+const AboutPage = () => {
+  return <About />;
 };
 
 export const getStaticProps = async ({ locale }) => {
@@ -12,4 +12,4 @@ export const getStaticProps = async ({ locale }) => {
   return { props: { ...translations }, revalidate: 10 };
 };
 
-export default About;
+export default AboutPage;

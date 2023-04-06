@@ -2,6 +2,15 @@ const { i18n } = require('./next-i18next.config');
 
 const nextConfig = {
   reactStrictMode: true,
+  env: { NEWS_API_KEY: process.env.NEWS_API_KEY, NEWS_API_URL: process.env.NEWS_API_URL },
+  images: {
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: '**',
+      },
+    ],
+  },
 };
 
 module.exports = {
@@ -15,4 +24,5 @@ module.exports = {
     return config;
   },
   i18n,
+  ...nextConfig,
 };

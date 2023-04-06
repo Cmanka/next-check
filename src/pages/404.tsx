@@ -1,9 +1,9 @@
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 
-import { NotFoundScreen } from '@/components/screens/not-found';
+import { NotFound } from '@/screens/not-found';
 
 const NotFoundPage = () => {
-  return <NotFoundScreen />;
+  return <NotFound />;
 };
 
 export const getStaticProps = async ({ locale }) => {
