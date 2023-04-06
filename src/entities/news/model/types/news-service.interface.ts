@@ -15,3 +15,13 @@ export interface NewsFromApi {
 export interface GetNewsResponse {
   articles: NewsFromApi[];
 }
+
+export interface RequestParameters {
+  language?: string;
+  q?: string;
+}
+export interface GetNewsVariables extends RequestParameters {}
+
+export interface GetNewsByIdVariables extends RequestParameters {
+  id: string;
+}

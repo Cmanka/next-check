@@ -10,8 +10,9 @@ const HomePage = ({ news }: HomeStaticProps) => {
 };
 
 export const getStaticProps: GetStaticProps<HomeStaticProps> = async ({ locale }) => {
-  const translations = await serverSideTranslations(locale ?? AppLanguage.English, ['common', 'home']);
-  const news = await getNews();
+  const language = locale ?? AppLanguage.English;
+  const translations = await serverSideTranslations(language, ['common', 'home']);
+  const news = await getNews({ language });
 
   return { props: { news, ...translations }, revalidate: 10 };
 };

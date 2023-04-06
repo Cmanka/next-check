@@ -9,16 +9,16 @@ import { Icon } from '@/shared/ui/icon';
 import * as Styled from './language-switcher.styles';
 
 const LanguageSwitcherComponent = () => {
-  const { locale, pathname, push } = useRouter();
+  const { locale, pathname, asPath, push } = useRouter();
   const {
     svg: { fill },
   } = useContext(ThemeContext);
 
   const handleChangeLanguage = () => {
     if (locale === AppLanguage.English) {
-      push(pathname, pathname, { locale: AppLanguage.Russian });
+      push(pathname, asPath, { locale: AppLanguage.Russian });
     } else {
-      push(pathname, pathname, { locale: AppLanguage.English });
+      push(pathname, asPath, { locale: AppLanguage.English });
     }
   };
 

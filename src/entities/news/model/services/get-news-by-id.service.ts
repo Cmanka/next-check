@@ -3,6 +3,7 @@ import { JSDOM } from 'jsdom';
 
 import { newsApi } from '../config/api.config';
 import { type News } from '../types/news.interface';
+import { type GetNewsByIdVariables } from '../types/news-service.interface';
 import { getNews } from './get-news.service';
 
 export const getFullContent = async (url: string) => {
@@ -15,9 +16,9 @@ export const getFullContent = async (url: string) => {
   return article?.textContent ?? '';
 };
 
-export const getNewsById = async (id: string): Promise<News> => {
+export const getNewsById = async ({ language, id }: GetNewsByIdVariables): Promise<News> => {
   try {
-    const newsResponse = await getNews();
+    const newsResponse = await getNews({ language });
     const news = newsResponse.find((data) => data.id === id);
 
     if (!news) {

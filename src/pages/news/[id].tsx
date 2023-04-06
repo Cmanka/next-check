@@ -20,8 +20,9 @@ export const getStaticPaths: GetStaticPaths<NewsStaticPath> = async () => {
 };
 
 export const getStaticProps: GetStaticProps<NewsStaticProps, NewsStaticPath> = async ({ params, locale }) => {
-  const translations = await serverSideTranslations(locale ?? AppLanguage.English, ['common']);
-  const news = await getNewsById(params.id);
+  const language = locale ?? AppLanguage.English;
+  const translations = await serverSideTranslations(language, ['common', 'news']);
+  const news = await getNewsById({ id: params.id, language });
 
   return { props: { ...translations, news }, revalidate: 300 };
 };

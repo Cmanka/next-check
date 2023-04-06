@@ -1,3 +1,4 @@
+import { useTranslation } from 'next-i18next';
 import { memo } from 'react';
 
 import { type NewsPageProps } from '@/screens/news';
@@ -7,10 +8,14 @@ import { NewsCard } from '../news-card';
 import * as Styled from './news.styles';
 
 const NewsComponent = ({ news }: NewsPageProps) => {
+  const { t } = useTranslation('news');
+
   return (
-    <PageWrapper>
+    <PageWrapper title={`${t('seo.title')} ${news.id}`}>
       <Styled.InnerWrapper>
-        <Styled.Title>News number {news.id}</Styled.Title>
+        <Styled.Title>
+          {t('title')} {news.id}
+        </Styled.Title>
         <NewsCard {...news} />
       </Styled.InnerWrapper>
     </PageWrapper>

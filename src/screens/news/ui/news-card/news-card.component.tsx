@@ -8,7 +8,8 @@ import { Routes } from '@/shared/constants/routes.constant';
 import * as Styled from './news-card.styles';
 
 const NewsCardComponent = ({ title, description, url, image, content }: News) => {
-  const { t } = useTranslation();
+  const { t } = useTranslation('news');
+
   return (
     <Styled.Wrapper>
       <Styled.Title>{title}</Styled.Title>
@@ -16,13 +17,13 @@ const NewsCardComponent = ({ title, description, url, image, content }: News) =>
         {description && <Styled.Description>{description}</Styled.Description>}
         {url && (
           <Styled.OriginLink href={url} target="_blank">
-            {t('External link')}
+            {t('external')}
           </Styled.OriginLink>
         )}
       </Styled.DescriptionWrapper>
       {image && <Image src={image} alt={title} width={920} height={480} />}
       {content && <Styled.Content dangerouslySetInnerHTML={{ __html: content }} />}
-      <Styled.HomeButton href={Routes.Home} label={t('Go back')} />
+      <Styled.HomeButton href={Routes.Home} label={t('back')} />
     </Styled.Wrapper>
   );
 };
