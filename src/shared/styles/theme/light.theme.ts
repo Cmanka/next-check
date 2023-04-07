@@ -4,6 +4,7 @@ export const lightTheme = {
     primary: '#ffffff',
     secondary: '#8798f8',
     font: '#000',
+    error: '#ff3333',
   },
   svg: {
     fill: '#000',

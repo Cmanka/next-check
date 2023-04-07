@@ -1,5 +1,4 @@
-import { useContext } from 'react';
-import { ThemeContext } from 'styled-components';
+import { useTheme } from 'styled-components';
 
 import ThemeIcon from '@/shared/assets/icons/theme.svg';
 import { Icon } from '@/shared/ui/icon';
@@ -10,7 +9,7 @@ const ThemeSwitcherComponent = () => {
   const {
     svg: { stroke, fill },
     toggleTheme,
-  } = useContext(ThemeContext);
+  } = useTheme();
 
   return (
     <Styled.RightItem onClick={toggleTheme}>

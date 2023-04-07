@@ -6,4 +6,5 @@ export interface NavigationItem {
   label: string;
   href: Routes;
   Svg: VFC<SVGProps<SVGSVGElement>>;
+  isShow: boolean;
 }

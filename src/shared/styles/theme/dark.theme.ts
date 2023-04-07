@@ -4,6 +4,7 @@ export const darkTheme = {
     primary: '#202125',
     secondary: '#8798f8',
     font: '#fff',
+    error: '#ff3333',
   },
   svg: {
     fill: '#fff',
