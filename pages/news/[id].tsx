@@ -2,7 +2,7 @@ import { type GetStaticPaths, type GetStaticProps } from 'next';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 
 import { getNews, getNewsById } from '@/entities/news';
-import { News, type NewsPageProps, type NewsStaticPath, type NewsStaticProps } from '@/screens/news';
+import { News, type NewsPageProps, type NewsStaticPath, type NewsStaticProps } from '@/pages/news';
 import { AppLanguage } from '@/shared/constants/app-language.constant';
 
 const NewsPage = ({ news }: NewsPageProps) => {

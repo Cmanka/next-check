@@ -1,4 +1,4 @@
-import create from 'zustand';
+import { create } from 'zustand';
 
 import { login } from '../services/login.service';
 import { type LoginFormStore } from '../types/login-form.store';

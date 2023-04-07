@@ -1,7 +1,7 @@
 import { useTranslation } from 'next-i18next';
 import { memo } from 'react';
 
-import { type NewsPageProps } from '@/screens/news';
+import { type NewsPageProps } from '@/pages/news';
 import { PageWrapper } from '@/widgets/page-wrapper';
 
 import { NewsCard } from '../news-card';

@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useCallback, useState } from 'react';
 import { useTheme } from 'styled-components';
 
 import { LoginModal } from '@/features/authorization';
@@ -13,9 +13,9 @@ const LoginIconComponent = () => {
   } = useTheme();
   const [loginModal, setLoginModal] = useState(false);
 
-  const handleCloseLoginModal = () => {
+  const handleCloseLoginModal = useCallback(() => {
     setLoginModal(false);
-  };
+  }, []);
 
   const handleOpenLoginModal = () => {
     setLoginModal(true);

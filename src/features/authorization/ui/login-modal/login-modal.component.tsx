@@ -1,3 +1,5 @@
+import { memo } from 'react';
+
 import { Modal } from '@/shared/ui/modal';
 
 import { LoginForm } from '../login-form';
@@ -13,4 +15,4 @@ const LoginModalComponent = ({ open, onClose }: LoginModalProps) => {
   );
 };
 
-export default LoginModalComponent;
+export default memo(LoginModalComponent);

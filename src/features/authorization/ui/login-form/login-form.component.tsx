@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect } from 'react';
+import React, { memo, useCallback, useEffect } from 'react';
 
 import { useUserStore } from '@/entities/user';
 import { StorageKeys } from '@/shared/constants/storage-keys.constant';
@@ -57,4 +57,4 @@ const LoginFormComponent = ({ onClose }: LoginFormProps) => {
   );
 };
 
-export default LoginFormComponent;
+export default memo(LoginFormComponent);

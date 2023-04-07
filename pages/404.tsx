@@ -1,7 +1,7 @@
 import { type GetStaticProps } from 'next';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 
-import { NotFound } from '@/screens/not-found';
+import { NotFound } from '@/pages/not-found';
 import { AppLanguage } from '@/shared/constants/app-language.constant';
 
 const NotFoundPage = () => {

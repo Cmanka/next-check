@@ -4,9 +4,8 @@ import { memo } from 'react';
 import { PageWrapper } from '@/widgets/page-wrapper';
 
 import * as Styled from './portfolios.styles';
-import { type PortfoliosServerSideProps } from './portfolios.types';
 
-const PortfoliosComponent = ({ portfolios }: PortfoliosServerSideProps) => {
+const PortfoliosComponent = () => {
   const { t } = useTranslation('portfolios');
 
   return (

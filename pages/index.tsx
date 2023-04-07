@@ -2,7 +2,7 @@ import { type GetStaticProps } from 'next';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 
 import { getNews } from '@/entities/news';
-import { Home, type HomeStaticProps } from '@/screens/home';
+import { Home, type HomeStaticProps } from '@/pages/home';
 import { AppLanguage } from '@/shared/constants/app-language.constant';
 
 const HomePage = ({ news }: HomeStaticProps) => {

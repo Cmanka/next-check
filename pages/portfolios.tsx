@@ -1,7 +1,7 @@
 import { type GetStaticProps } from 'next';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 
-import { Portfolios } from '@/screens/portfolios';
+import { Portfolios } from '@/pages/portfolios';
 import { AppLanguage } from '@/shared/constants/app-language.constant';
 
 const PortfoliosPage = () => {
