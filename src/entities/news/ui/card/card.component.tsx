@@ -1,5 +1,4 @@
 import Image from 'next/image';
-import { useTranslation } from 'next-i18next';
 import { memo } from 'react';
 
 import noImage from '@/shared/assets/images/no-image.png';
@@ -10,16 +9,14 @@ import * as Styled from './card.styles';
 import { type CardProps } from './card.types';
 
 const CardComponent = ({ className, news: { id, title, description, image } }: CardProps) => {
-  const { t } = useTranslation();
-
   return (
-    <Styled.Wrapper className={className}>
+    <Styled.Wrapper className={className} href={parseUrlById(id, Routes.News)}>
       <Styled.Header>{title}</Styled.Header>
       <Styled.Content>
         {description && <Styled.Description>{description}</Styled.Description>}
-        {image && <Image src={image} alt={title} width={300} height={200} />}
-        {!image && <Image src={noImage} alt="no image" width={300} height={200} />}
-        <Styled.DetailLink label={t('navigation.text')} href={parseUrlById(id, Routes.News)} />
+        <Styled.ImageWrapper>
+          <Image src={image || noImage} alt={title} fill />
+        </Styled.ImageWrapper>
       </Styled.Content>
     </Styled.Wrapper>
   );

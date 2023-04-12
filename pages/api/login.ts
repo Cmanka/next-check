@@ -1,8 +1,10 @@
-import { type NextApiRequest, type NextApiResponse } from 'next';
+import { NextApiRequest, NextApiResponse } from 'next';
 
-import { type User } from '@/entities/user';
+import { User } from '@/entities/user';
 
-const users = [{ username: 'admin', password: '123', age: 12, firstName: 'Alexander' }];
+type ServerUser = User & { password: string };
+
+const users = [{ username: 'admin', password: '123', age: 12, firstname: 'Alexander' }];
 
 export default async function loginHandler(req: NextApiRequest, res: NextApiResponse<User | { message: string }>) {
   try {
@@ -21,6 +23,6 @@ export default async function loginHandler(req: NextApiRequest, res: NextApiResp
 
     res.status(200).json(user);
   } catch (error) {
-    res.status(405).send({ message: error.message });
+    res.status(405).send({ message: 'Something went wrong' });
   }
 }

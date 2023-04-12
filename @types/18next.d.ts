@@ -1,10 +1,10 @@
 import 'i18next';
 
-import type about from '../public/locales/en/about.json';
-import type common from '../public/locales/en/common.json';
-import type home from '../public/locales/en/home.json';
-import type news from '../public/locales/en/news.json';
-import type portfolios from '../public/locales/en/portfolios.json';
+import about from '../public/locales/en/about.json';
+import common from '../public/locales/en/common.json';
+import home from '../public/locales/en/home.json';
+import news from '../public/locales/en/news.json';
+import portfolios from '../public/locales/en/portfolios.json';
 
 interface I18nNamespaces {
   common: typeof common;

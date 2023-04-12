@@ -7,6 +7,6 @@ export interface LoginFormStore {
   error: string;
   updateUsername: (username: string) => void;
   updatePassword: (password: string) => void;
-  handleSubmit: () => Promise<User>;
+  handleSubmit: () => Promise<void | User>;
   clearState: () => void;
 }

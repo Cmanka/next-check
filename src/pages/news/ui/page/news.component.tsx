@@ -13,9 +13,6 @@ const NewsComponent = ({ news }: NewsPageProps) => {
   return (
     <PageWrapper title={`${t('seo.title')} ${news.id}`}>
       <Styled.InnerWrapper>
-        <Styled.Title>
-          {t('title')} {news.id}
-        </Styled.Title>
         <NewsCard {...news} />
       </Styled.InnerWrapper>
     </PageWrapper>

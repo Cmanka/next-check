@@ -1,10 +1,10 @@
-import { memo } from 'react';
+import { ChangeEvent, memo } from 'react';
 
 import * as Styled from './input.styles';
 import { type InputProps } from './input.types';
 
 const InputComponent = ({ label, onChange, value, className, type = 'text', ...props }: InputProps) => {
-  const overrideOnChange = (e) => {
+  const overrideOnChange = (e: ChangeEvent<HTMLInputElement>) => {
     onChange?.(e.target.value);
   };
 

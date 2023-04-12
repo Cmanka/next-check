@@ -1,6 +1,7 @@
 import { useTranslation } from 'next-i18next';
 import { memo } from 'react';
 
+import { withAuth } from '@/shared/lib/hocs/with-auth.hoc';
 import { PageWrapper } from '@/widgets/page-wrapper';
 
 import * as Styled from './portfolios.styles';
@@ -17,4 +18,4 @@ const PortfoliosComponent = () => {
   );
 };
 
-export default memo(PortfoliosComponent);
+export default memo(withAuth(PortfoliosComponent));

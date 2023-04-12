@@ -1,5 +1,6 @@
-import { type ButtonHTMLAttributes, type DetailedHTMLProps } from 'react';
+import { ButtonHTMLAttributes, DetailedHTMLProps } from 'react';
 
-export interface ButtonProps extends DetailedHTMLProps<ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement> {
+export interface ButtonProps
+  extends Omit<DetailedHTMLProps<ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement>, 'ref'> {
   label: string;
 }

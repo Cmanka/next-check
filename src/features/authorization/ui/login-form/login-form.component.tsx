@@ -1,4 +1,4 @@
-import React, { memo, useCallback, useEffect } from 'react';
+import React, { FormEvent, memo, useCallback, useEffect } from 'react';
 
 import { useUserStore } from '@/entities/user';
 import { StorageKeys } from '@/shared/constants/storage-keys.constant';
@@ -12,19 +12,16 @@ const LoginFormComponent = ({ onClose }: LoginFormProps) => {
   const { password, loading, error, username, updatePassword, updateUsername, handleSubmit, clearState } =
     useLoginFormStore();
 
-  const handleLogin = useCallback(
-    (e) => {
-      e.preventDefault();
-      handleSubmit().then((user) => {
-        if (user) {
-          addUser(user);
-          onClose();
-          localStorage.setItem(StorageKeys.User, JSON.stringify(user));
-        }
-      });
-    },
-    [onClose, addUser, handleSubmit],
-  );
+  const onLogin = (e: FormEvent) => {
+    e.preventDefault();
+    handleSubmit().then((user) => {
+      if (user) {
+        addUser(user);
+        onClose();
+        localStorage.setItem(StorageKeys.User, JSON.stringify(user));
+      }
+    });
+  };
 
   const onChangeUsername = useCallback(
     (username: string) => {
@@ -48,9 +45,9 @@ const LoginFormComponent = ({ onClose }: LoginFormProps) => {
   );
 
   return (
-    <Styled.Form onSubmit={handleLogin}>
+    <Styled.Form onSubmit={onLogin}>
       <Styled.Input label="Username" onChange={onChangeUsername} value={username} />
-      <Styled.Input type="password" label="Password" onChange={onChangePassword} password={password} />
+      <Styled.Input type="password" label="Password" onChange={onChangePassword} value={password} />
       {error && <Styled.Error>{error}</Styled.Error>}
       <Styled.Button disabled={loading} label="Sign in" type="submit" />
     </Styled.Form>

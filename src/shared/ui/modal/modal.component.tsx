@@ -1,10 +1,12 @@
+import { MouseEventHandler } from 'react';
+
 import { Portal } from '@/shared/ui/portal';
 
 import * as Styled from './modal.styles';
 import { type ModalProps } from './modal.types';
 
 const ModalComponent = ({ className, open, onClose, children }: ModalProps) => {
-  const onClickContent = (e) => {
+  const onClickContent: MouseEventHandler<HTMLDivElement> = (e) => {
     e.stopPropagation();
   };
 

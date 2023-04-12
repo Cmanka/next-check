@@ -1,10 +1,16 @@
+import Link from 'next/link';
 import styled from 'styled-components';
 
-import { ButtonLink } from '@/shared/ui/button-link';
-
-export const Wrapper = styled.div`
+export const Wrapper = styled(Link)`
   display: flex;
   flex-direction: column;
+  transition: 0.25s ease-in-out;
+  cursor: pointer;
+
+  &:hover {
+    transform: scale(1.05);
+    opacity: 0.7;
+  }
 `;
 
 export const Header = styled.div`
@@ -20,21 +26,20 @@ export const Header = styled.div`
 export const Content = styled.div`
   flex: 1;
   display: flex;
-  align-items: center;
   flex-direction: column;
   gap: 20px;
   background-color: ${({ theme: { colors } }) => colors.primary};
-  padding: 12px 24px;
   box-shadow: 0 4px 8px 0 rgba(135, 152, 248, 0.2), 0 6px 20px 0 rgba(135, 152, 248, 0.19);
 `;
 
 export const Description = styled.p`
   font-size: 18px;
-  margin-bottom: 24px;
+  padding: 24px 12px;
 `;
 
-export const DetailLink = styled(ButtonLink)`
-  max-width: 195px;
-  text-align: center;
-  margin: 0 auto;
+export const ImageWrapper = styled.div`
+  width: 100%;
+  min-height: 300px;
+  position: relative;
+  flex: 1;
 `;

@@ -1,22 +1,22 @@
-import { useMemo } from 'react';
+import { useTranslation } from 'next-i18next';
 
-import { selectorIsAuth, useUserStore } from '@/entities/user';
+import { useUserStore } from '@/entities/user';
 
-import { navigationList } from '../../model/data/navigation-list.data';
+import { selectNavigationList } from '../../model/selectors/select-navigation-list';
 import { NavigationItem } from '../navigation-item';
 import * as Styled from './list.styles';
 
 const ListComponent = () => {
-  const isAuth = useUserStore(selectorIsAuth);
-  const navigations = useMemo(
-    () =>
-      navigationList(isAuth)
-        .filter(({ isShow }) => isShow)
-        .map((item) => <NavigationItem key={item.href} item={item} />),
-    [isAuth],
-  );
+  const { t } = useTranslation('common');
+  const navigationList = useUserStore(selectNavigationList(t));
 
-  return <Styled.Wrapper>{navigations}</Styled.Wrapper>;
+  return (
+    <Styled.Wrapper>
+      {navigationList.map((item) => (
+        <NavigationItem key={item.href} item={item} />
+      ))}
+    </Styled.Wrapper>
+  );
 };
 
 export default ListComponent;
